@@ -15,7 +15,7 @@ object WallService {
     fun update(post: Post): Boolean {
         var isFind = false
         for ((index, postFind) in arrayPost.withIndex()) {
-            if (post.id == postFind.id) {
+            if(post.id == postFind.id) {
                 arrayPost[index] = post
                 isFind = true
             }

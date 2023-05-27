@@ -3,14 +3,14 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.Assert.*
 
-class AutoTest {
+class AutoTest{
 
     @Test
     fun checkAddToArray() {
-        val firstPost = Post(0, 1, 1, 1, 1, "firstPost", Comment(), Copyright(), Like(), Report(), null,null,null,null,null,null,null,null,null,null,null, null, null)
+        val firstPost = Post(0,1,1,1,1,"firstPost", Comment(),Copyright(),Like(),Report())
         val post = WallService.add(firstPost)
 
-        assertEquals(1, post.id)
+        assertEquals(1,post.id)
     }
 
     @Before
@@ -20,13 +20,13 @@ class AutoTest {
 
     @Test
     fun updateExistingTrue() {
-        val firstPost = Post(0, 1, 1, 1, 1, "firstPost", Comment(), Copyright(), Like(), Report(), null,null,null,null,null,null,null,null,null,null,null, null, null)
-        val secondPost = Post(0, 2, 2, 2, 2, "secondPost", Comment(), Copyright(), Like(), Report(), null,null,null,null,null,null,null,null,null,null,null, null, null)
+        val firstPost = Post(0,1,1,1,1,"firstPost", Comment(),Copyright(),Like(),Report())
+        val secondPost = Post(0,2,2,2,2,"secondPost", Comment(),Copyright(),Like(),Report())
 
         WallService.add(firstPost)
         WallService.add(secondPost)
 
-        val update = Post(1, 3, 3, 3, 3, "updatePost", Comment(), Copyright(), Like(), Report(), null,null,null,null,null,null,null,null,null,null,null, null, null)
+        val update = Post(1,3,3,3,3,"updatePost", Comment(),Copyright(),Like(),Report())
 
         val result = WallService.update(update)
 
@@ -40,13 +40,13 @@ class AutoTest {
 
     @Test
     fun updateExistingFalse() {
-        val firstPost = Post(0, 1, 1, 1, 1, "firstPost", Comment(), Copyright(), Like(), Report(), null,null,null,null,null,null,null,null,null,null,null, null, null)
-        val secondPost = Post(0, 2, 2, 2, 2, "secondPost", Comment(), Copyright(), Like(), Report(), null,null,null,null,null,null,null,null,null,null,null, null, null)
+        val firstPost = Post(0,1,1,1,1,"firstPost", Comment(),Copyright(),Like(),Report())
+        val secondPost = Post(0,2,2,2,2,"secondPost", Comment(),Copyright(),Like(),Report())
 
         WallService.add(firstPost)
         WallService.add(secondPost)
 
-        val update = Post(10, 3, 3, 3, 3, "updatePost", Comment(), Copyright(), Like(), Report(), null,null,null,null,null,null,null,null,null,null,null, null, null)
+        val update = Post(10,3,3,3,3,"updatePost", Comment(),Copyright(),Like(),Report())
 
         // выполняем целевое действие
         val result = WallService.update(update)
