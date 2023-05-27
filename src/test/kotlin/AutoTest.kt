@@ -50,6 +50,7 @@ class AutoTest {
 
         // выполняем целевое действие
         val result = WallService.update(update)
+
         assertFalse(result)
     }
 }
